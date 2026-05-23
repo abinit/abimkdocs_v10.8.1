@@ -1,0 +1,73 @@
+"""Global variables associated to the test suite."""
+
+#: List of CPP variables that should be defined in config.h in order to enable this suite.
+need_cpp_vars = [
+]
+
+#: List of keywords that are automatically added to all the tests of this suite.
+keywords = [
+]
+
+#: List of input files
+inp_files = [
+    "t01.abi" ,  # test post treatment of an increase of symmetry due to geometry optimization
+    "t02.abi" ,  # check Wyckoff positions of trigonal groups 143-167
+    "t03.abi" ,  # same as v10[04] but with norm-conserving pseudos (with DFTI)
+    "t04.abi" ,  # same as v9[206] but with istwfk>1 (with DFTI)
+    "t05.abi" ,  # same as v10[04] but with norm-conserving pseudos (without DFTI)
+    "t06.abi" ,  # same as v9[206] but with istwfk>1 (without DFTI)
+    "t07.abi" ,  # test oracle and nbdbuf in chebfi (cprj_in_memory=0 and 1).
+    "t08.abi" ,  # same as v10[07] but with istwfk>1 (with less datasets)
+    "t09.abi" ,  # same as v10[07] but with nspinor=2 (with less datasets)
+    "t10.abi" ,  # compare cprj_in_memory=1 with cprj_in_memory=0. PAW, istwfk=1.
+    "t11.abi" ,  # same as v10[10], with nsppol=2.
+    "t12.abi" ,  # same as v10[10], with nspinor=2.
+    "t13.abi" ,  # same as v10[10], with istwfk>1 (with DFTI).
+    "t14.abi" ,  # same as v10[10] but with NC pseudos
+#    "t15.abi" ,  # same as v10[10] but with NC pseudos, nspinor=2 ! not working yet
+    "t16.abi" ,  # same as v10[10] but with NC pseudos, istwfk>1 (with DFTI)
+    "t17.abi" ,  # same as v10[10], with istwfk>1 (without DFTI).
+    "t18.abi" ,  # same as v10[10] but with NC pseudos, istwfk>1 (without DFTI)
+    "t19.abi" ,  # compare cprj_in_memory=1 with cprj_in_memory=0 for cell optimization.
+    "t20.abi" ,  # test nvt_langevin MD algorithm (PIMD implementation)
+    "t21.abi" ,  # test npt_langevin MD algorithm (PIMD implementation)
+    "t22.abi" ,  # test finite-temperature exchange-correlation functionals, and calculation of Sxc (NC case)
+    "t23.abi" ,  # test finite-temperature exchange-correlation functionals, and calculation of Sxc (PAW case)
+    "t24.abi" ,  # same as v10[10], with dilatxm>1, istwfk>1 (with DFTI).
+    "t25.abi" ,  # same as v10[10], with dilatxm>1, istwfk>1 (without DFTI).
+    "t26.abi" ,  # test cprj_in_memory when atoms are not ordered by type.
+    "t27.abi" ,  # test GBT for the spin spiral
+    "t28.abi" ,  # test stress for GBT using Finite difference
+    "t29.abi" ,  # test force for GBT using Finite difference
+    "t30.abi" ,  # test axial vector symmetry with hspinfield along x,y and z directions.
+    "t39.abi" ,  # test overlapping of PAW sphere with itself (possible if small unit cell)
+    "t40.abi" ,  # test orbmag calculation when using spatial symmetries for GS nuclear dipole
+    "t41.abi" ,  # test orbmag calculation using R2SCAN mGGA
+    "t42.abi" ,  # test orbmag calculation using R2SCAN mGGA, nspinor 2, zora
+    "t43.abi" ,  # test quadrupoles calculation with xcnlcc
+    "t44.abi" ,  # test all zora input values on orbmag calculation
+    "t50.abi" ,  # test the projected SOC for GBT
+    "t51.abi" ,  # test spin quantization axis
+    "t52.abi",  # test linear-response calculation with 2D Coulomb cutoff in BN monolayer
+    "t53.abi",  # test linear-response calculation with 2D short-range Coulomb kernel in BN monolayer
+    "t54.abi",  # test finite-q scalar potential linear-response calculation with PCM short-circuit conditions
+    "t61.abi" ,  # test total energy due to electron-phonon interaction: step 1 DFT+DFPT
+    "t62.abi" ,  # test total energy due to electron-phonon interaction: step 2 quadrupole
+    "t63.abi" ,  # test total energy due to electron-phonon interaction: step 3 merge DDB
+    "t64.abi" ,  # test total energy due to electron-phonon interaction: step 4 merge DVDB
+    "t65.abi" ,  # test total energy due to electron-phonon interaction: step 5 dense nscf + AHC + Sternheimer
+    "t81.abi" ,  # Short MD to test restart on next test
+    "t82.abi" ,  # Test restart of MD from the HIST of previous test using restartxf -1
+    "t83.abi" ,  # Test variable cell nudged elastic band method
+    "t84.abi" ,  # Test nuclear spin dipole coupling by energy difference
+    "t104.abi" , # Test Si spectral function and mobilities :step 1 WFK
+    "t105.abi" , # Test Si spectral function and mobilities :step 2 merge DDB
+    "t106.abi" , # Test Si spectral function and mobilities :step 3 merge DVDB
+    "t107.abi" , # Test Si spectral function and mobilities :step 4 mobilities cumulant and DM with positive doping correction
+    "t108.abi",  # Test for rcpaw
+    "t109.abi",  # Test paw_add_core variable
+    "t110.abi",  # Test for toldmag
+    "t121.abi",  # Test for hybrid function using fock_icutcoul, fock_rcut
+    "t122.abi",  # Test meta-GGA NC pseudopotential reading: compare PSML vs UPF for bulk Si
+    "t150.abi",  # Test sequential slice execution in spectrum slicing diagonalization with 1 MPI
+]

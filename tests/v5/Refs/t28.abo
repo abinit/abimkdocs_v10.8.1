@@ -1,0 +1,387 @@
+
+.Version 10.5.8.2 of ANADDB, released Oct 2025.
+.(MPI version, prepared for a x86_64_linux_gnu13.2 computer)
+
+.Copyright (C) 1998-2026 ABINIT group .
+ ANADDB comes with ABSOLUTELY NO WARRANTY.
+ It is free software, and you are welcome to redistribute it
+ under certain conditions (GNU General Public License,
+ see ~abinit/COPYING or http://www.gnu.org/copyleft/gpl.txt).
+
+ ABINIT is a project of the Universite Catholique de Louvain,
+ Corning Inc. and other collaborators, see ~abinit/doc/developers/contributors.txt .
+ Please read https://docs.abinit.org/theory/acknowledgments for suggested
+ acknowledgments of the ABINIT effort.
+ For more information, see https://www.abinit.org .
+
+.Starting date : Sat 20 Dec 2025.
+- ( at 17h12 )
+
+
+================================================================================
+
+ -outvars_anaddb: echo values of input variables ----------------------
+
+ Flags :
+     ifcflag         1
+     thmflag         3
+ Miscellaneous information :
+       eivec         4
+         asr         1
+ Interatomic Force Constants Inputs :
+      dipdip         0
+     dipquad         0
+    quadquad         0
+      ifcana         0
+      ifcout         0
+ Description of grid 1 :
+        brav         1
+       ngqpt         2         2         2
+      nqshft         1
+      q1shft
+                     0.00000000E+00  0.00000000E+00  0.00000000E+00
+ Thermal information :
+       nchan       800
+      nwchan        10
+      dostol         2.50000000E-01
+      thmtol         2.50000000E-01
+     ntemper        10
+   temperinc         1.00000000E+02
+   tempermin         1.00000000E+02
+ Description of grid 2 (Fourier interp. or BZ sampling):
+      ng2qpt         0         0         0
+      ngrids         4
+      q2shft         0.00000000E+00  0.00000000E+00  0.00000000E+00
+ First list of wavevector (reduced coord.) :
+       nph1l         2
+       qph1l
+                     0.00000000E+00  0.00000000E+00  0.00000000E+00    1.000E+00
+                     5.00000000E-01  0.00000000E+00  0.00000000E+00    1.000E+00
+
+================================================================================
+
+ read the DDB information and perform some checks
+
+
+  ==== Info on the Cryst% object ====
+ Real(R)+Recip(G) space primitive vectors, cartesian coordinates (Bohr,Bohr^-1):
+ R(1)=  0.0000000  5.1002933  5.1002933  G(1)= -0.0980336  0.0980336  0.0980336
+ R(2)=  5.1002933  0.0000000  5.1002933  G(2)=  0.0980336 -0.0980336  0.0980336
+ R(3)=  5.1002933  5.1002933  0.0000000  G(3)=  0.0980336  0.0980336 -0.0980336
+ Unit cell volume ucvol=  2.6534777E+02 bohr^3
+ Angles (23,13,12)=  6.00000000E+01  6.00000000E+01  6.00000000E+01 degrees
+ Time-reversal symmetry is present
+ Reduced atomic positions [iatom, xred, symbol]:
+    1)    0.0000000  0.0000000  0.0000000  Si
+    2)    0.2500000  0.2500000  0.2500000  Si
+
+ DDB file with 8 blocks has been read.
+
+================================================================================
+
+ Calculation of the interatomic forces
+
+       Homogeneous q point set in the B.Z.
+ Grid q points  :        8
+  1)   0.00000000E+00  0.00000000E+00  0.00000000E+00
+  2)   5.00000000E-01  0.00000000E+00  0.00000000E+00
+  3)   0.00000000E+00  5.00000000E-01  0.00000000E+00
+  4)   5.00000000E-01  5.00000000E-01  0.00000000E+00
+  5)   0.00000000E+00  0.00000000E+00  5.00000000E-01
+  6)   5.00000000E-01  0.00000000E+00  5.00000000E-01
+  7)   0.00000000E+00  5.00000000E-01  5.00000000E-01
+  8)   5.00000000E-01  5.00000000E-01  5.00000000E-01
+
+ The interatomic forces have been obtained
+
+================================================================================
+
+ Treat the first list of vectors
+
+
+  Phonon wavevector (reduced coordinates) :  0.00000  0.00000  0.00000
+ Phonon energies in Hartree :
+   0.000000E+00  0.000000E+00  0.000000E+00  2.342579E-03  2.342579E-03
+   2.342580E-03
+ Phonon frequencies in cm-1    :
+-  0.000000E+00  0.000000E+00  0.000000E+00  5.141366E+02  5.141367E+02
+-  5.141368E+02
+
+ Analysis of degeneracies and characters (maximum tolerance=1.00E-06 a.u.)
+ For each vibration mode, or group of modes if degenerate,
+ the characters are given for each symmetry operation (see the list in the log file).
+ Symmetry characters of vibration mode #   1
+       degenerate with vibration modes #   2 to    3
+  3.0
+ Symmetry characters of vibration mode #   4
+       degenerate with vibration modes #   5 to    6
+  3.0
+
+  Phonon wavevector (reduced coordinates) :  0.50000  0.00000  0.00000
+ Phonon energies in Hartree :
+   4.793080E-04  4.793118E-04  1.728541E-03  1.881034E-03  2.241334E-03
+   2.241341E-03
+ Phonon frequencies in cm-1    :
+-  1.051960E+02  1.051968E+02  3.793708E+02  4.128393E+02  4.919160E+02
+-  4.919175E+02
+
+================================================================================
+ Computation of the electron-phonon changes to the electronic eigenenergies
+
+ thmeig : list of q wavevectors, with integration weights
+     1    0.000000E+00    0.000000E+00    0.000000E+00        5.000000E-01
+     2    5.000000E-01    0.000000E+00    0.000000E+00        5.000000E-01
+
+ Will write phonon DOS in file t28_ep_PDS
+
+ For checking purposes, write ten values in the present file.
+       Index    Energy (in Ha)      DOS
+         1      0.000000E+00      4.231422E+04
+        51      2.582002E-04      0.000000E+00
+       101      5.164003E-04      9.052132E+02
+       151      7.746005E-04      0.000000E+00
+       201      1.032801E-03      0.000000E+00
+       251      1.291001E-03      0.000000E+00
+       301      1.549201E-03      0.000000E+00
+       351      1.807401E-03      2.080483E-02
+       401      2.065601E-03      0.000000E+00
+       451      2.323801E-03      1.752488E+04
+
+--------------------------------------------------------------------------------
+
+ Electron-phonon change of electronic structure.
+ The temperature-dependent values are written in the _TBS file.
+ Here follows, for each electronic wavevector and band :
+      zero-point renormalisation (Ha) and linear slope (Ha/Kelvin)
+
+ Kpt number      1, with reduced coordinates :   -2.500000E-01    5.000000E-01    0.000000E+00
+     1       -4.417506E-04        2.348679E-07
+     2       -9.264011E-05       -5.769114E-07
+     3       -3.523968E-06        2.311322E-06
+     4        3.295097E-04        2.225992E-06
+     5       -6.377409E-04       -3.143257E-06
+
+ Kpt number      2, with reduced coordinates :    5.000000E-01   -2.500000E-01    0.000000E+00
+     1       -1.188480E-04        2.285261E-07
+     2        3.240526E-05        3.082600E-06
+     3        1.839227E-03        6.496094E-06
+     4       -3.456428E-04        5.824077E-07
+     5       -8.980079E-04        6.776855E-08
+
+ Kpt number      3, with reduced coordinates :   -2.500000E-01   -2.500000E-01    2.500000E-01
+     1       -4.637165E-04        1.715336E-07
+     2       -6.167541E-05        2.400819E-07
+     3       -2.192211E-04       -6.909592E-07
+     4        4.747364E-04        4.377966E-06
+     5       -4.966390E-04       -2.537753E-06
+
+ Kpt number      4, with reduced coordinates :   -2.500000E-01    0.000000E+00    0.000000E+00
+     1       -3.087871E-04       -1.542948E-07
+     2       -3.820813E-05        2.470819E-06
+     3        1.329017E-04        1.434650E-06
+     4        1.329025E-04        1.434655E-06
+     5       -7.634005E-04       -5.851905E-06
+
+ Kpt number      5, with reduced coordinates :    5.000000E-01    2.500000E-01    0.000000E+00
+     1       -1.188480E-04        2.285261E-07
+     2        3.240526E-05        3.082600E-06
+     3        1.839227E-03        6.496094E-06
+     4       -3.456428E-04        5.824077E-07
+     5       -8.980079E-04        6.776855E-08
+
+ Kpt number      6, with reduced coordinates :   -2.500000E-01    2.500000E-01    2.500000E-01
+     1       -1.188481E-04        2.285238E-07
+     2        3.240326E-05        3.082586E-06
+     3        1.839220E-03        6.496099E-06
+     4       -3.456423E-04        5.824062E-07
+     5       -8.979998E-04        6.777295E-08
+
+ Kpt number      7, with reduced coordinates :    2.500000E-01    5.000000E-01    0.000000E+00
+     1       -4.417506E-04        2.348679E-07
+     2       -9.264011E-05       -5.769114E-07
+     3       -3.523968E-06        2.311322E-06
+     4        3.295097E-04        2.225992E-06
+     5       -6.377409E-04       -3.143257E-06
+
+ Kpt number      8, with reduced coordinates :    5.000000E-01    5.000000E-01    2.500000E-01
+     1       -4.637171E-04        1.715193E-07
+     2       -6.167186E-05        2.401254E-07
+     3       -2.192188E-04       -6.909410E-07
+     4        4.747315E-04        4.377914E-06
+     5       -4.966411E-04       -2.537767E-06
+
+ Kpt number      9, with reduced coordinates :   -2.500000E-01    5.000000E-01    5.000000E-01
+     1       -4.417526E-04        2.348572E-07
+     2       -9.263759E-05       -5.769019E-07
+     3       -3.524401E-06        2.311329E-06
+     4        3.295102E-04        2.225983E-06
+     5       -6.377427E-04       -3.143255E-06
+
+ Kpt number     10, with reduced coordinates :    0.000000E+00   -2.500000E-01    0.000000E+00
+     1       -6.539044E-04       -1.164958E-06
+     2       -2.434720E-03       -8.313478E-06
+     3        4.811543E-04        4.267560E-06
+     4        4.897870E-04        1.071032E-07
+     5       -2.068843E-04       -1.198011E-06
+
+ Kpt number     11, with reduced coordinates :    2.500000E-01   -2.500000E-01    2.500000E-01
+     1       -4.637162E-04        1.715232E-07
+     2       -6.167363E-05        2.401304E-07
+     3       -2.192260E-04       -6.910366E-07
+     4        4.747411E-04        4.378039E-06
+     5       -4.966475E-04       -2.537921E-06
+
+ Kpt number     12, with reduced coordinates :    5.000000E-01   -2.500000E-01    5.000000E-01
+     1       -4.637164E-04        1.715248E-07
+     2       -6.167139E-05        2.401342E-07
+     3       -2.192255E-04       -6.910273E-07
+     4        4.747406E-04        4.378047E-06
+     5       -4.966497E-04       -2.537934E-06
+
+ Kpt number     13, with reduced coordinates :   -2.500000E-01   -2.500000E-01   -2.500000E-01
+     1       -6.539042E-04       -1.164955E-06
+     2       -2.434713E-03       -8.313470E-06
+     3        4.810002E-04        4.343358E-06
+     4        4.899444E-04        3.132778E-08
+     5       -2.068910E-04       -1.198017E-06
+
+ Kpt number     14, with reduced coordinates :    2.500000E-01    0.000000E+00    0.000000E+00
+     1       -3.087871E-04       -1.542948E-07
+     2       -3.820813E-05        2.470819E-06
+     3        1.329017E-04        1.434650E-06
+     4        1.329025E-04        1.434655E-06
+     5       -7.634005E-04       -5.851905E-06
+
+ Kpt number     15, with reduced coordinates :    5.000000E-01    0.000000E+00    2.500000E-01
+     1       -1.188481E-04        2.285204E-07
+     2        3.240166E-05        3.082554E-06
+     3        1.839230E-03        6.496148E-06
+     4       -3.456402E-04        5.824223E-07
+     5       -8.980126E-04        6.767021E-08
+
+ Kpt number     16, with reduced coordinates :   -2.500000E-01    0.000000E+00    5.000000E-01
+     1       -4.417535E-04        2.348376E-07
+     2       -9.263998E-05       -5.769255E-07
+     3       -3.521688E-06        2.311366E-06
+     4        3.295099E-04        2.225981E-06
+     5       -6.377406E-04       -3.143227E-06
+
+ Kpt number     17, with reduced coordinates :    0.000000E+00    2.500000E-01    0.000000E+00
+     1       -6.539044E-04       -1.164958E-06
+     2       -2.434720E-03       -8.313478E-06
+     3        4.811543E-04        4.267560E-06
+     4        4.897870E-04        1.071032E-07
+     5       -2.068843E-04       -1.198011E-06
+
+ Kpt number     18, with reduced coordinates :    2.500000E-01    2.500000E-01    2.500000E-01
+     1       -6.539042E-04       -1.164955E-06
+     2       -2.434713E-03       -8.313470E-06
+     3        4.810002E-04        4.343358E-06
+     4        4.899444E-04        3.132778E-08
+     5       -2.068910E-04       -1.198017E-06
+
+ Kpt number     19, with reduced coordinates :    5.000000E-01    2.500000E-01    5.000000E-01
+     1       -4.637164E-04        1.715248E-07
+     2       -6.167139E-05        2.401342E-07
+     3       -2.192255E-04       -6.910273E-07
+     4        4.747406E-04        4.378047E-06
+     5       -4.966497E-04       -2.537934E-06
+
+ Kpt number     20, with reduced coordinates :   -2.500000E-01    2.500000E-01   -2.500000E-01
+     1       -4.637162E-04        1.715232E-07
+     2       -6.167363E-05        2.401304E-07
+     3       -2.192260E-04       -6.910366E-07
+     4        4.747411E-04        4.378039E-06
+     5       -4.966475E-04       -2.537921E-06
+
+ Kpt number     21, with reduced coordinates :    0.000000E+00    5.000000E-01    2.500000E-01
+     1       -4.637173E-04        1.715154E-07
+     2       -6.167505E-05        2.401155E-07
+     3       -2.192199E-04       -6.909634E-07
+     4        4.747326E-04        4.377923E-06
+     5       -4.966406E-04       -2.537793E-06
+
+ Kpt number     22, with reduced coordinates :    2.500000E-01    5.000000E-01    5.000000E-01
+     1       -4.417526E-04        2.348572E-07
+     2       -9.263759E-05       -5.769019E-07
+     3       -3.524401E-06        2.311329E-06
+     4        3.295102E-04        2.225983E-06
+     5       -6.377427E-04       -3.143255E-06
+
+ Kpt number     23, with reduced coordinates :    5.000000E-01    5.000000E-01   -2.500000E-01
+     1       -4.637171E-04        1.715193E-07
+     2       -6.167186E-05        2.401254E-07
+     3       -2.192188E-04       -6.909410E-07
+     4        4.747315E-04        4.377914E-06
+     5       -4.966411E-04       -2.537767E-06
+
+ Kpt number     24, with reduced coordinates :    0.000000E+00   -2.500000E-01    5.000000E-01
+     1       -4.637169E-04        1.715314E-07
+     2       -6.167645E-05        2.400751E-07
+     3       -2.192218E-04       -6.909739E-07
+     4        4.747370E-04        4.377981E-06
+     5       -4.966405E-04       -2.537791E-06
+
+ Kpt number     25, with reduced coordinates :    2.500000E-01   -2.500000E-01   -2.500000E-01
+     1       -1.188481E-04        2.285238E-07
+     2        3.240326E-05        3.082586E-06
+     3        1.839220E-03        6.496099E-06
+     4       -3.456423E-04        5.824062E-07
+     5       -8.979998E-04        6.777295E-08
+
+ Kpt number     26, with reduced coordinates :    0.000000E+00    0.000000E+00    2.500000E-01
+     1       -6.539039E-04       -1.164948E-06
+     2       -2.434721E-03       -8.313505E-06
+     3        4.788032E-04        5.397297E-06
+     4        4.921402E-04       -1.022590E-06
+     5       -2.068794E-04       -1.197886E-06
+
+ Kpt number     27, with reduced coordinates :    2.500000E-01    0.000000E+00    5.000000E-01
+     1       -4.417535E-04        2.348376E-07
+     2       -9.263998E-05       -5.769255E-07
+     3       -3.521688E-06        2.311366E-06
+     4        3.295099E-04        2.225981E-06
+     5       -6.377406E-04       -3.143227E-06
+
+ Kpt number     28, with reduced coordinates :    5.000000E-01    0.000000E+00   -2.500000E-01
+     1       -1.188481E-04        2.285204E-07
+     2        3.240166E-05        3.082554E-06
+     3        1.839230E-03        6.496148E-06
+     4       -3.456402E-04        5.824223E-07
+     5       -8.980126E-04        6.767021E-08
+
+ Kpt number     29, with reduced coordinates :    0.000000E+00    2.500000E-01    5.000000E-01
+     1       -4.637169E-04        1.715314E-07
+     2       -6.167645E-05        2.400751E-07
+     3       -2.192218E-04       -6.909739E-07
+     4        4.747370E-04        4.377981E-06
+     5       -4.966405E-04       -2.537791E-06
+
+ Kpt number     30, with reduced coordinates :    2.500000E-01    2.500000E-01   -2.500000E-01
+     1       -4.637165E-04        1.715336E-07
+     2       -6.167541E-05        2.400819E-07
+     3       -2.192211E-04       -6.909592E-07
+     4        4.747364E-04        4.377966E-06
+     5       -4.966390E-04       -2.537753E-06
+
+ Kpt number     31, with reduced coordinates :    0.000000E+00    5.000000E-01   -2.500000E-01
+     1       -4.637173E-04        1.715154E-07
+     2       -6.167505E-05        2.401155E-07
+     3       -2.192199E-04       -6.909634E-07
+     4        4.747326E-04        4.377923E-06
+     5       -4.966406E-04       -2.537793E-06
+
+ Kpt number     32, with reduced coordinates :    0.000000E+00    0.000000E+00   -2.500000E-01
+     1       -6.539039E-04       -1.164948E-06
+     2       -2.434721E-03       -8.313505E-06
+     3        4.788032E-04        5.397297E-06
+     4        4.921402E-04       -1.022590E-06
+     5       -2.068794E-04       -1.197886E-06
+-
+- Proc.   0 individual time (sec): cpu=          0.2  wall=          0.2
+
+================================================================================
+
++Total cpu time      0.236  and wall time      0.237 sec
+
+ anaddb : the run completed successfully.
